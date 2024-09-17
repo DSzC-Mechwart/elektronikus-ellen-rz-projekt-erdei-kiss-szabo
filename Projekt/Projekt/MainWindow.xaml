@@ -11,5 +11,7 @@
         <TextBox HorizontalAlignment="Center" Margin="0,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Tanuló jelszava:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,64,0,0"/>
         <TextBox HorizontalAlignment="Center" Margin="0,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Bejelentkezés" HorizontalAlignment="Center" Margin="0,118,0,0" VerticalAlignment="Top" Click="diakbe"/>
+        <Button Content="Adminisztráció" HorizontalAlignment="Center" Margin="0,143,0,0" VerticalAlignment="Top" Click="adminbe"/>
     </Grid>
 </Window>

@@ -20,5 +20,17 @@ namespace Projekt
         {
             InitializeComponent();
         }
+
+        private void diakbe(object sender, RoutedEventArgs e)
+        {
+            new Diak().Show();
+            Close();
+        }
+
+        private void adminbe(object sender, RoutedEventArgs e)
+        {
+            new Admin().Show();
+            Close();
+        }
     }
 }
