@@ -15,24 +15,13 @@ using System.Windows.Shapes;
 namespace Projekt
 {
     /// <summary>
-    /// Interaction logic for Admin.xaml
+    /// Interaction logic for Tantargy.xaml
     /// </summary>
-    public partial class Admin : Window
+    public partial class Tantargy : Window
     {
-        public Admin()
+        public Tantargy()
         {
             InitializeComponent();
-        }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            new Tantargy().Show();
-            this.Close();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            new Szemelyi().Show();
-            this.Close();
         }
     }
 }
