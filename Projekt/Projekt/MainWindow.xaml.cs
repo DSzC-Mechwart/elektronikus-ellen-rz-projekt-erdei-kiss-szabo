@@ -38,13 +38,21 @@ namespace Projekt
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             diakbej.IsEnabled = true;
-            adminbej.IsEnabled = true;
+            string adminnev = neve.Text;
+            if (adminnev == "admin") 
+            {
+                adminbej.IsEnabled = true;
+            }
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             diakbej.IsEnabled = true;
-            adminbej.IsEnabled = true;
+            string adminjelszo = jelszava.Text;
+            if (adminjelszo== "admin")
+            {
+                adminbej.IsEnabled = true;
+            }
         }
     }
 }
