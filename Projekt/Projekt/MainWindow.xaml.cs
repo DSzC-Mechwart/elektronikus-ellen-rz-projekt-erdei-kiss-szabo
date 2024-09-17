@@ -39,7 +39,8 @@ namespace Projekt
         {
             diakbej.IsEnabled = true;
             string adminnev = neve.Text;
-            if (adminnev == "admin") 
+            string adminjelszo = jelszava.Text;
+            if (adminnev == "admin" && adminjelszo == "admin") 
             {
                 adminbej.IsEnabled = true;
             }
@@ -48,8 +49,9 @@ namespace Projekt
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             diakbej.IsEnabled = true;
+            string adminnev = neve.Text;
             string adminjelszo = jelszava.Text;
-            if (adminjelszo== "admin")
+            if (adminjelszo== "admin" && adminjelszo == "admin")
             {
                 adminbej.IsEnabled = true;
             }
