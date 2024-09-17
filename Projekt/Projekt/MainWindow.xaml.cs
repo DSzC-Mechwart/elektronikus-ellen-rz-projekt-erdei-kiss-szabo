@@ -19,6 +19,8 @@ namespace Projekt
         public MainWindow()
         {
             InitializeComponent();
+            diakbej.IsEnabled = false;
+            adminbej.IsEnabled = false;
         }
 
         private void diakbe(object sender, RoutedEventArgs e)
@@ -31,6 +33,18 @@ namespace Projekt
         {
             new Admin().Show();
             Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            diakbej.IsEnabled = true;
+            adminbej.IsEnabled = true;
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            diakbej.IsEnabled = true;
+            adminbej.IsEnabled = true;
         }
     }
 }

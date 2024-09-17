@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="Bejelentkezes" Height="400" Width="600">
     <Grid>
-        <Label Content="Tanuló neve:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Tanuló jelszava:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,64,0,0"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Bejelentkezés" HorizontalAlignment="Center" Margin="0,118,0,0" VerticalAlignment="Top" Click="diakbe"/>
-        <Button Content="Adminisztráció" HorizontalAlignment="Center" Margin="0,143,0,0" VerticalAlignment="Top" Click="adminbe"/>
+        <Label Content="Tanuló neve:" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" Margin="0,64,0,0"/>
+        <TextBox x:Name="neve" HorizontalAlignment="Center" FontSize="20" Margin="0,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
+        <Label Content="Tanuló jelszava:" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" Margin="0,130,0,0"/>
+        <TextBox x:Name="jelszava" HorizontalAlignment="Center" FontSize="20" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="diakbej" Content="Bejelentkezés" FontSize="20" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Click="diakbe"/>
+        <Button x:Name="adminbej" Content="Adminisztráció" FontSize="15" HorizontalAlignment="Center" Margin="0,244,0,0" VerticalAlignment="Top" Click="adminbe"/>
+        <Label Content="Elektronikus ellenőrző" HorizontalAlignment="Center" FontSize="30" Margin="0,14,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
