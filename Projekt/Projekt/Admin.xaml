@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="Admin" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Height="150" Width="150"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="525,150,0,0" VerticalAlignment="Top" Height="150" Width="150"/>
-
+        <StackPanel>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="150"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="525,150,0,0" VerticalAlignment="Top" Height="150" Width="150" Click="Button_Click"/>
+        </StackPanel>
+        <Frame x:Name="myFrame" Margin="0"/>
     </Grid>
 </Window>
