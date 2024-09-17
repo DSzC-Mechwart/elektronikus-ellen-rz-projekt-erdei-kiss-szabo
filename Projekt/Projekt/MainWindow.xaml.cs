@@ -39,22 +39,30 @@ namespace Projekt
         {
             diakbej.IsEnabled = true;
             string adminnev = neve.Text;
+            string diaknev = neve.Text;
             string adminjelszo = jelszava.Text;
+            string diakjelszo = jelszava.Text;
             if (adminnev == "admin" && adminjelszo == "admin") 
             {
                 adminbej.IsEnabled = true;
             }
+            if (diaknev == "" || diakjelszo == "")
+                diakbej.IsEnabled = false;
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             diakbej.IsEnabled = true;
             string adminnev = neve.Text;
+            string diaknev = neve.Text;
             string adminjelszo = jelszava.Text;
+            string diakjelszo = jelszava.Text;
             if (adminjelszo== "admin" && adminjelszo == "admin")
             {
                 adminbej.IsEnabled = true;
             }
+            if (diaknev == "" || diakjelszo == "")
+                diakbej.IsEnabled = false;
         }
     }
 }
