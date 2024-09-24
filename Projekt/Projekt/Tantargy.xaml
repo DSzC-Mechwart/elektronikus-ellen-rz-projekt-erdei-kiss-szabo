@@ -5,22 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="Tantargy" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="Tantargy" Height="500" Width="950" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Tantárgy felvétel" FontSize="40" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    
-        
-        
+        <Label Content="Tantárgy felvétel" FontSize="50" FontWeight="Bold" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Tantárgy neve:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" Width="310" FontSize="20"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Melyik évfolyamon tanulják ezt a tantárgyat:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="20">
+            <ComboBoxItem Content="9. évfolyam"/>
+            <ComboBoxItem Content="10. évfolyam"/>
+            <ComboBoxItem Content="11. évfolyam"/>
+            <ComboBoxItem Content="12. évfolyam"/>
+            <ComboBoxItem Content="13. évfolyam"/>
+        </ComboBox>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="A tantárgy tipusa:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <RadioButton Grid.Row="3" Grid.Column="1" Content="Közismereti" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="35, 0, 0, 0" FontSize="20"/>
+        <RadioButton Grid.Row="3" Grid.Column="1" Content="Szakmai" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 35, 0" FontSize="20"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Heti óraszám:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="310" FontSize="20"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Az éves óraszám: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <Label Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+
+        <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="75" Content="Felvétel" FontSize="20"/>
     </Grid>
 </Window>
