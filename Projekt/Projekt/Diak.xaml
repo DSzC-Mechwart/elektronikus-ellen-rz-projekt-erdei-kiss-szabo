@@ -11,23 +11,28 @@
             <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="7*"></RowDefinition>
         </Grid.RowDefinitions>
+        
         <Label FontWeight="DemiBold" FontSize="20" HorizontalAlignment="Left" Margin="13,12,0,0" VerticalAlignment="Top">
             <TextBlock TextDecorations="Underline">Jegyek bevitele</TextBlock>
         </Label>
-        <ComboBox HorizontalAlignment="Left" Margin="81,0,0,0" VerticalAlignment="Center" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="259,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="145" Height="24"/>
-        <ComboBox HorizontalAlignment="Left" Margin="548,0,0,0" VerticalAlignment="Center" Width="120"/>
+        
+        <ComboBox x:Name="targy" HorizontalAlignment="Left" Margin="81,0,0,0" VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="tema" HorizontalAlignment="Left" Margin="259,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="145" Height="24"/>
+        <ComboBox x:Name="tipus" HorizontalAlignment="Left" Margin="548,0,0,0" VerticalAlignment="Center" Width="120"/>
+        <ComboBox x:Name="jegy" HorizontalAlignment="Left" Margin="737,0,0,0" VerticalAlignment="Center" Width="49"/>
+        <TextBox x:Name="osszatlag" HorizontalAlignment="Left" Margin="109,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Height="24" TextChanged="TextBox_TextChanged"/>
+        <CheckBox x:Name="morzsa" FontSize="15" HorizontalAlignment="Left" Margin="400,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.507"/>
+        
         <Label Content="Tantárgy:" FontSize="15" HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.561,0.237"/>
         <Label Content="Téma:" FontSize="15" HorizontalAlignment="Left" Margin="206,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.561,0.237"/>
         <Label Content="Számonkérés típusa:" FontSize="15" HorizontalAlignment="Left" Margin="404,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.561,0.237"/>
-        <ComboBox HorizontalAlignment="Left" Margin="737,0,0,0" VerticalAlignment="Center" Width="49"/>
         <Label Content="Értékelés:" FontSize="15" HorizontalAlignment="Left" Margin="667,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.561,0.237"/>
         <Label Content="Tanuló átlaga: " FontSize="15" HorizontalAlignment="Left" Margin="6,81,0,4"/>
+        <Label Content="Lemorzsolódással veszélyeztetett: " FontSize="15" HorizontalAlignment="Left" Margin="168,81,0,3"/>
+        
+        <Button Content="Admin" HorizontalAlignment="Left" Margin="746,85,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        
         <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
         </DataGrid>
-        <TextBox x:Name="osszatlag" HorizontalAlignment="Left" Margin="109,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Height="24" TextChanged="TextBox_TextChanged"/>
-        <CheckBox FontSize="15" HorizontalAlignment="Left" Margin="400,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.507"/>
-        <Label Content="Lemorzsolódással veszélyeztetett: " FontSize="15" HorizontalAlignment="Left" Margin="168,81,0,3"/>
-        <Button Content="Admin" HorizontalAlignment="Left" Margin="746,85,0,0" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Window>
