@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Diak" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Jegyek bevitele" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
