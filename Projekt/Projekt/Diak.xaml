@@ -16,10 +16,22 @@
             <TextBlock TextDecorations="Underline">Jegyek bevitele</TextBlock>
         </Label>
 
-        <ComboBox x:Name="targy" HorizontalAlignment="Left" Margin="86,57,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="targy" HorizontalAlignment="Left" Margin="86,57,0,0" VerticalAlignment="Top" Width="120">
+        </ComboBox>
         <TextBox x:Name="tema" HorizontalAlignment="Left" Margin="264,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="24"/>
-        <ComboBox x:Name="tipus" HorizontalAlignment="Left" Margin="553,57,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="jegy" Margin="742,57,9,0" VerticalAlignment="Top" HorizontalAlignment="Left" MaxWidth="50"/>
+        <ComboBox x:Name="tipus" HorizontalAlignment="Left" Margin="553,57,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>Órai munka</ComboBoxItem>
+            <ComboBoxItem>Írásbeli felelet</ComboBoxItem>
+            <ComboBoxItem>Szóbeli felelet</ComboBoxItem>
+            <ComboBoxItem>Témazáró dolgozat</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="jegy" Margin="742,57,9,0" VerticalAlignment="Top" HorizontalAlignment="Left" MaxWidth="50">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+        </ComboBox>
         <TextBox x:Name="osszatlag" HorizontalAlignment="Left" Margin="114,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Height="24"/>
         <CheckBox x:Name="morzsa" FontSize="15" HorizontalAlignment="Left" Margin="409,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.507"/>
 
