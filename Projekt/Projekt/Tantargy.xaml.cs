@@ -23,5 +23,29 @@ namespace Projekt
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(EvfolyamCB.SelectedIndex != -1 && HetiOraszam.Text != "")
+            {
+                switch (EvfolyamCB.SelectedIndex)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                        EvesOraszam.Content = Convert.ToInt32(HetiOraszam.Text) * 36;
+                        break;
+                    case 3:
+                        if (KozismeretiRB.IsChecked == true)
+                            EvesOraszam.Content = Convert.ToInt32(HetiOraszam.Text) * 31;
+                        else if (SzakmaiRB.IsChecked == true)
+                            EvesOraszam.Content = Convert.ToInt32(HetiOraszam.Text) * 36;
+                        break;
+                    case 4:
+                        EvesOraszam.Content = Convert.ToInt32(HetiOraszam.Text) * 31;
+                        break;
+                }
+            }
+        }
     }
 }
