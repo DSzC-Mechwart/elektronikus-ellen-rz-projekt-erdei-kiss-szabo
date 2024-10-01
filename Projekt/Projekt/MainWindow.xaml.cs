@@ -35,6 +35,12 @@ namespace Projekt
             Close();
         }
 
+        private void SzemelyiAdat(object sender, RoutedEventArgs e)
+        {
+            new SzemelyiAdat().Show();
+            Close();
+        }
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             diakbej.IsEnabled = true;

@@ -13,6 +13,7 @@
         <TextBox x:Name="jelszava" HorizontalAlignment="Center" FontSize="20" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <Button x:Name="diakbej" Content="Bejelentkezés" FontSize="20" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Click="diakbe"/>
         <Button x:Name="adminbej" Content="Adminisztráció" FontSize="15" HorizontalAlignment="Center" Margin="0,244,0,0" VerticalAlignment="Top" Click="adminbe"/>
+        <Button x:Name="szemelyibej" Content="szem" FontSize="15" HorizontalAlignment="Center" Margin="0,273,0,0" VerticalAlignment="Top" Click="SzemelyiAdat"/>
         <Label Content="Elektronikus ellenőrző" HorizontalAlignment="Center" FontSize="30" Margin="0,14,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
