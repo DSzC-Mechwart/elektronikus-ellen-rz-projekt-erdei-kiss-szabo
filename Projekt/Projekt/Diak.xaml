@@ -7,44 +7,10 @@
         mc:Ignorable="d"
         Title="Diak" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.503,0.478">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="7*"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Label FontWeight="DemiBold" FontSize="20" HorizontalAlignment="Left" Margin="13,12,0,0" VerticalAlignment="Top">
-            <TextBlock TextDecorations="Underline">Jegyek bevitele</TextBlock>
-        </Label>
-
-        <ComboBox x:Name="targy" HorizontalAlignment="Left" Margin="86,57,0,0" VerticalAlignment="Top" Width="120">
-        </ComboBox>
-        <TextBox x:Name="tema" HorizontalAlignment="Left" Margin="264,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="24"/>
-        <ComboBox x:Name="tipus" HorizontalAlignment="Left" Margin="553,57,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem>Órai munka</ComboBoxItem>
-            <ComboBoxItem>Írásbeli felelet</ComboBoxItem>
-            <ComboBoxItem>Szóbeli felelet</ComboBoxItem>
-            <ComboBoxItem>Témazáró dolgozat</ComboBoxItem>
-        </ComboBox>
-        <ComboBox x:Name="jegy" Margin="742,57,9,0" VerticalAlignment="Top" HorizontalAlignment="Left" MaxWidth="50">
-            <ComboBoxItem>1</ComboBoxItem>
-            <ComboBoxItem>2</ComboBoxItem>
-            <ComboBoxItem>3</ComboBoxItem>
-            <ComboBoxItem>4</ComboBoxItem>
-            <ComboBoxItem>5</ComboBoxItem>
-        </ComboBox>
-        <TextBlock x:Name="osszatlag" HorizontalAlignment="Left" Margin="114,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Height="24"/>
-        <CheckBox x:Name="morzsa" FontSize="15" HorizontalAlignment="Left" Margin="409,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.507"/>
-
-        <Label Content="Tantárgy:" FontSize="15" HorizontalAlignment="Left" Margin="11,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,0.237"/>
-        <Label Content="Téma:" FontSize="15" HorizontalAlignment="Left" Margin="211,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,0.237"/>
-        <Label Content="Számonkérés típusa:" FontSize="15" HorizontalAlignment="Left" Margin="409,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,0.237"/>
-        <Label Content="Értékelés:" FontSize="15" HorizontalAlignment="Left" Margin="672,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,0.237"/>
-        <Label Content="Tanuló átlaga: " FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,86,0,0"/>
-        <Label Content="Lemorzsolódással veszélyeztetett: " FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="177,86,0,0"/>
-
-        <Button Content="Admin" HorizontalAlignment="Right" Margin="0,24,14,0" VerticalAlignment="Top" Click="Button_Click"/>
-
-        <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
-        </DataGrid>
+        <StackPanel Orientation="Horizontal" Height="20" VerticalAlignment="Top">
+            <Button x:Name="diakF" Content="Diák felület" MinWidth="80" Click="Button_Click_1"></Button>
+            <Button x:Name="adminF" Content="Admin felület" MinWidth="80" Margin="10,0,0,0" Click="Button_Click_2"></Button>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,20,0,0"></Frame>
     </Grid>
 </Window>

@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Projekt
 {
     /// <summary>
-    /// Interaction logic for Diak.xaml
+    /// Interaction logic for AdminPage.xaml
     /// </summary>
-    public partial class Diak : Window
+    public partial class AdminPage : Page
     {
-        public Diak()
+        public AdminPage()
         {
             InitializeComponent();
-            Main.Content = new DiakPage();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new DiakPage();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new AdminPage();
         }
     }
 }
