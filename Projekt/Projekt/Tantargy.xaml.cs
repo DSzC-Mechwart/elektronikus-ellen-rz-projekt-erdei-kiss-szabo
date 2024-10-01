@@ -24,9 +24,9 @@ namespace Projekt
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void HetiOraszamBeallitasa()
         {
-            if(EvfolyamCB.SelectedIndex != -1 && HetiOraszam.Text != "")
+            if (EvfolyamCB.SelectedIndex != -1 && HetiOraszam.Text != "")
             {
                 switch (EvfolyamCB.SelectedIndex)
                 {
@@ -46,6 +46,26 @@ namespace Projekt
                         break;
                 }
             }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            HetiOraszamBeallitasa();
+        }
+
+        private void EvfolyamCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            HetiOraszamBeallitasa();
+        }
+
+        private void KozismeretiRB_Checked(object sender, RoutedEventArgs e)
+        {
+            HetiOraszamBeallitasa();
+        }
+
+        private void SzakmaiRB_Checked(object sender, RoutedEventArgs e)
+        {
+            HetiOraszamBeallitasa();
         }
     }
 }
