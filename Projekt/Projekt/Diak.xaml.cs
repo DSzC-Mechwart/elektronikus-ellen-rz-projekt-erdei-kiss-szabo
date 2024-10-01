@@ -28,11 +28,13 @@ namespace Projekt
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Main.Content = new DiakPage();
+            diakF.IsEnabled = false;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Main.Content = new AdminPage();
+            adminF.IsEnabled = false;
         }
     }
 }
