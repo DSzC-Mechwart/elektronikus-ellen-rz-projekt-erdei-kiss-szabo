@@ -22,6 +22,8 @@ namespace Projekt
         public SzemelyiAdat()
         {
             InitializeComponent();
+            szuletesiIdo.SelectedDate = DateTime.Now;
+            beiratkozas.SelectedDate = DateTime.Now;
         }
         private void visszaGomb_Click(object sender, RoutedEventArgs e)
         {
@@ -39,9 +41,7 @@ namespace Projekt
         {
             string Nev = nev.Text;
             string SzuletesiHely = szuletesiHely.Text;
-            int[] SzuletesiIdoSplit = szuletesiIdo.Text.Split('/').Select(int.Parse).ToArray();
-            DateTime SzuletesiIdo = new DateTime(SzuletesiIdoSplit[0], SzuletesiIdoSplit[1], SzuletesiIdoSplit[2]);
-            MessageBox.Show(SzuletesiIdo.ToString());
+            DateOnly SzuletesiIdo = DateOnly.FromDateTime(szuletesiIdo.SelectedDate!.Value);
         }
     }
 }
