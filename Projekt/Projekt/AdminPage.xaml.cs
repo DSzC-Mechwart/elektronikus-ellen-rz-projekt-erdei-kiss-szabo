@@ -25,7 +25,7 @@ namespace Projekt
         {
             InitializeComponent();
 
-            DataContext = Tantargyak.Read("tantargyak.csv");
+            //DataContext = Tantargyak.Read("tantargyak.csv");
         }
     }
 }
