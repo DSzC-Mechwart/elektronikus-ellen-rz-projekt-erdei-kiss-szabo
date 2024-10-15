@@ -31,7 +31,7 @@ namespace Projekt
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new Szemelyi().Show();
+            new SzemelyiAdat().Show();
             this.Close();
         }
     }
