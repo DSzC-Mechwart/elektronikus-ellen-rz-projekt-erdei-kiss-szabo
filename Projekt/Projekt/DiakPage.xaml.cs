@@ -24,5 +24,10 @@ namespace Projekt
         {
             InitializeComponent();
         }
+
+        private void JegyHozzaadasa(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

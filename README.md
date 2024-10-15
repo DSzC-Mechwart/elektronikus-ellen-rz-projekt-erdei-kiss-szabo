@@ -11,3 +11,6 @@
 
 ### Jegyek bevitele:
 - Kiss Bence
+
+
+A tantargyak.csv-ben az adatok ";"-vel vannak elválasztva egymástól. Az adatok sorrendje egy sorban név;évfolyam;tipus;heti óraszám

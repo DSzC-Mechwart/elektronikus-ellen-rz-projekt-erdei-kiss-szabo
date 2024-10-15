@@ -9,6 +9,6 @@
       Title="AdminPage">
 
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"></DataGrid>
+        <DataGrid x:Name="AdatGrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
     </Grid>
 </Page>

@@ -1,6 +1,7 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,25 +12,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Projekt
 {
     /// <summary>
-    /// Interaction logic for AdminPage.xaml
+    /// Interaction logic for Torles.xaml
     /// </summary>
-    public partial class AdminPage : Page
+    public partial class Torles : Window
     {
-        List<TTargy> Adatok = [];
-        public AdminPage()
+        List<TTargy> Tantargyak = [];
+        public Torles()
         {
             InitializeComponent();
-            ListaFel();
-            AdatGrid.ItemsSource = Adatok;
+            ListaFeltotlese();
+            TantargyDatagrid.ItemsSource = Tantargyak;
         }
 
-        public void ListaFel()
+        private void ListaFeltotlese()
         {
             foreach (var sor in File.ReadAllLines("tantargyak.csv"))
             {
@@ -40,7 +40,7 @@ namespace Projekt
                 string tipus = resz[2];
                 int HetiOraszam = int.Parse(resz[3]);
                 TTargy uj = new TTargy(nev, evfolyam, tipus, HetiOraszam);
-                Adatok.Add(uj);
+                Tantargyak.Add(uj);
             }
         }
     }

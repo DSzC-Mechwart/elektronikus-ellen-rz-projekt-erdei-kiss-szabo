@@ -24,7 +24,7 @@
         <Label Content="Tantárgy felvétel" FontSize="50" FontWeight="Bold" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <Label Grid.Row="1" Grid.Column="0" Content="Tantárgy neve:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" Width="310" FontSize="20"/>
+        <TextBox x:Name="TantargyNeve" Grid.Column="1" Grid.Row="1" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" Width="310" FontSize="20"/>
 
         <Label Grid.Row="2" Grid.Column="0" Content="Melyik évfolyamon tanulják ezt a tantárgyat:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
         <ComboBox x:Name="EvfolyamCB" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="20" SelectionChanged="EvfolyamCB_SelectionChanged">
@@ -40,12 +40,13 @@
         <RadioButton x:Name="SzakmaiRB" Grid.Row="3" Grid.Column="1" Content="Szakmai" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 35, 0" FontSize="20" Checked="SzakmaiRB_Checked"/>
 
         <Label Grid.Row="4" Grid.Column="0" Content="Heti óraszám:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
-        <TextBox x:Name="HetiOraszam" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="310" FontSize="20" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="HetiOraszamTB" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="310" FontSize="20" TextChanged="TextBox_TextChanged"/>
 
         <Label Grid.Row="5" Grid.Column="0" Content="Az éves óraszám: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
         <Label x:Name="EvesOraszam" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
 
-        <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="175" Height="100" Content="Felvétel" FontSize="20" Margin="0, 0, 0, 100"/>
-        <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="125" Height="50" Content="Admin" FontSize="20" Margin="0, 100, 0, 0"/>
+        <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="175" Height="100" Content="Felvétel" FontSize="20" Margin="0, 0, 0, 250" Click="Felvetel"/>
+        <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="125" Height="50" Content="Törlés" FontSize="20" Margin="0, 0, 0, 75" Click="TorlesGomb"/>
+        <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="125" Height="50" Content="Admin" FontSize="20" Margin="0, 50, 0, 0"/>
     </Grid>
 </Window>
