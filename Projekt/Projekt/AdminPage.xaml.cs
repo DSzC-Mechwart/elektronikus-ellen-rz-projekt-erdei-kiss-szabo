@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace Projekt
         {
             InitializeComponent();
 
-            DataContext = Tantargyak.ReadFile("tantargyak.csv");
+            DataContext = Tantargyak.Read("tantargyak.csv");
         }
     }
 }
