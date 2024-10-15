@@ -32,7 +32,7 @@ namespace Projekt
         }
         private void visszaGomb_Click(object sender, RoutedEventArgs e)
         {
-            new MainWindow().Show();
+            new Admin().Show();
             Close();
         }
 
@@ -96,6 +96,7 @@ namespace Projekt
                 }
                 writer.WriteLine($"{Adat.Nev};{Adat.SzuletesiHely};{Adat.SzuletesiIdo};{Adat.AnyjaNeve};{Adat.Lakcim};{Adat.BeiratkozasIdeje};{Adat.Szak};{Adat.Osztaly};{((Adat.Kollegista) ? "Igen" : "Nem")};{Adat.Kollegium};{Adat.Torzslapszam}"); 
             }
+            MessageBox.Show("Hozzáadás sikeres.");
         }
     }
 }
