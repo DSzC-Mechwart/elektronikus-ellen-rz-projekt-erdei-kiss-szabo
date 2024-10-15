@@ -1,0 +1,18 @@
+﻿<Window x:Class="Projekt.Torles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Torles" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Válassza ki azt a tantárgyat amelyiket törölni szeretné!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+        <DataGrid x:Name="TantargyDatagrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+    </Grid>
+</Window>
