@@ -8,8 +8,8 @@
         Title="Diak" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.503,0.478">
         <StackPanel Orientation="Horizontal" Height="20" VerticalAlignment="Top">
-            <Button x:Name="diakF" Content="Diák felület" MinWidth="80" Click="Button_Click_1"></Button>
             <Button x:Name="adminF" Content="Admin felület" MinWidth="80" Margin="10,0,0,0" Click="Button_Click_2"></Button>
+            <Button x:Name="vissza" Content="Kilépés" MinWidth="80" HorizontalAlignment="Right" Margin="10,0,0,0" Click="kilepes"></Button>
         </StackPanel>
         <Frame x:Name="Main" Margin="0,20,0,0"></Frame>
     </Grid>
