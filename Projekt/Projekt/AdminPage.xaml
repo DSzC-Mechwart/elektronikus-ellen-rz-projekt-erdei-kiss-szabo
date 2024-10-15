@@ -9,7 +9,6 @@
       Title="AdminPage">
 
     <Grid>
-        <DataGrid AutoGenerateColumns="True"
-              ItemsSource="{Binding}"/>
+        <DataGrid x:Name="AdatGrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
     </Grid>
 </Page>

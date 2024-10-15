@@ -21,11 +21,27 @@ namespace Projekt
     /// </summary>
     public partial class AdminPage : Page
     {
+        List<TTargy> Adatok = [];
         public AdminPage()
         {
             InitializeComponent();
+            ListaFel();
+            AdatGrid.ItemsSource = Adatok;
+        }
 
-            //DataContext = Tantargyak.Read("tantargyak.csv");
+        public void ListaFel()
+        {
+            foreach (var sor in File.ReadAllLines("tantargyak.csv"))
+            {
+                string[] resz = sor.Split(";");
+                string nev = resz[0];
+                string[] evfolyamReszei = resz[1].Split(".");
+                int evfolyam = int.Parse(evfolyamReszei[0]);
+                string tipus = resz[2];
+                int HetiOraszam = int.Parse(resz[3]);
+                TTargy uj = new TTargy(nev, evfolyam, tipus, HetiOraszam);
+                Adatok.Add(uj);
+            }
         }
     }
 }
