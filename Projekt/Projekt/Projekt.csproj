@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="SzemelyiAdatok.txt" />
+    <None Remove="SzemelyiAdatok.csv" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="SzemelyiAdatok.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Resource Include="SzemelyiAdatok.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 
