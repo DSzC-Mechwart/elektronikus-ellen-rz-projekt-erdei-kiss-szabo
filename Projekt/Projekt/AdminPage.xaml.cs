@@ -23,6 +23,8 @@ namespace Projekt
         public AdminPage()
         {
             InitializeComponent();
+
+            DataContext = Tantargyak.ReadFile("tantargyak.csv");
         }
     }
 }

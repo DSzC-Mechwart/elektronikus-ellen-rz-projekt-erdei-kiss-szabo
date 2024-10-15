@@ -42,9 +42,10 @@
         <Label Content="Számonkérés típusa:" FontSize="15" HorizontalAlignment="Left" Margin="409,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,0.237"/>
         <Label Content="Értékelés:" FontSize="15" HorizontalAlignment="Left" Margin="672,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,0.237"/>
         <Label Content="Tanuló átlaga: " FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,86,0,0"/>
-        <Label Content="Lemorzsolódással veszélyeztetett: " FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="177,86,0,0"/>
+        <Label Content="Lemorzsolódással veszélyeztetett: " FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="177,86,0,0"/> 
 
         <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
         </DataGrid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="730,91,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
