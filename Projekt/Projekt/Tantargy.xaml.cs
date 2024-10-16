@@ -88,5 +88,10 @@ namespace Projekt
         {
             new Torles().ShowDialog();
         }
+
+        private void AdminGomb(object sender, RoutedEventArgs e)
+        {
+            new TantargyAdminisztracio().ShowDialog();
+        }
     }
 }
