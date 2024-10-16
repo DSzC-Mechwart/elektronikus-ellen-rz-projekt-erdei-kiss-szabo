@@ -78,8 +78,7 @@ namespace Projekt
                 tipus = "közismereti";
             else
                 tipus = "szakmai";
-            using (StreamWriter sw = new("tantargyak.csv", true, Encoding.UTF8)
-)
+            using (StreamWriter sw = new("tantargyak.csv", true, Encoding.UTF8))
             {
                 sw.WriteLine($"{TantargyNeve.Text};{EvfolyamCB.Text};{tipus};{HetiOraszamTB.Text}");
             }            

@@ -13,6 +13,6 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Label Content="Válassza ki azt a tantárgyat amelyiket törölni szeretné!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
-        <DataGrid x:Name="TantargyDatagrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid x:Name="TantargyDatagrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="TantargyDatagrid_SelectionChanged"/>
     </Grid>
 </Window>

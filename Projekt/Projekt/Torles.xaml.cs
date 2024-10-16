@@ -33,15 +33,67 @@ namespace Projekt
         {
             foreach (var sor in File.ReadAllLines("tantargyak.csv"))
             {
+                if (sor != "")
+                {
+                    string[] resz = sor.Split(";");
+                    string nev = resz[0];
+                    string[] evfolyamReszei = resz[1].Split(".");
+                    int evfolyam = int.Parse(evfolyamReszei[0]);
+                    string tipus = resz[2];
+                    int HetiOraszam = int.Parse(resz[3]);
+                    TTargy uj = new TTargy(nev, evfolyam, tipus, HetiOraszam);
+                    Tantargyak.Add(uj);
+                }
+            }
+        }
+
+        private void TantargyDatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TTargy kivalasztott = e.AddedItems[0] as TTargy;
+            if (kivalasztott == null)
+            {
+                MessageBox.Show(":(");
+                return;
+            }
+
+            var sorok = File.ReadAllLines("tantargyak.csv", Encoding.UTF8).ToList();
+            string torolni = "";
+
+            foreach (var sor in sorok.Skip(1))
+            {
                 string[] resz = sor.Split(";");
                 string nev = resz[0];
                 string[] evfolyamReszei = resz[1].Split(".");
                 int evfolyam = int.Parse(evfolyamReszei[0]);
                 string tipus = resz[2];
                 int HetiOraszam = int.Parse(resz[3]);
-                TTargy uj = new TTargy(nev, evfolyam, tipus, HetiOraszam);
-                Tantargyak.Add(uj);
+                if (nev == kivalasztott.Nev && evfolyam == kivalasztott.Evfolyam && tipus == kivalasztott.Tipus && HetiOraszam == kivalasztott.HetiOraszam)
+                {
+                    torolni = sor;
+                }
             }
+            sorok.Remove(torolni);
+
+            using (StreamWriter sw = new("tantargyak.csv", false, Encoding.UTF8))
+            {
+                sw.WriteLine();
+            }
+
+            using (StreamWriter sw = new("tantargyak.csv", true, Encoding.UTF8))
+            {
+                foreach (var sor in sorok.Skip(1))
+                {
+                    string[] resz = sor.Split(";");
+                    string nev = resz[0];
+                    string[] evfolyamReszei = resz[1].Split(".");
+                    int evfolyam = int.Parse(evfolyamReszei[0]);
+                    string tipus = resz[2];
+                    int HetiOraszam = int.Parse(resz[3]);
+                    sw.WriteLine($"{nev};{evfolyam};{tipus};{HetiOraszam}");
+                }
+            }
+
+
         }
     }
 }
