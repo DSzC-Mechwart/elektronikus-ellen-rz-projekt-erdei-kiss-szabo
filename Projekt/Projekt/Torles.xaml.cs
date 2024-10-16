@@ -47,41 +47,24 @@ namespace Projekt
             }
         }
 
+        TTargy kivalasztott;
         private void TantargyDatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TTargy kivalasztott = e.AddedItems[0] as TTargy;
-            if (kivalasztott == null)
-            {
-                MessageBox.Show(":(");
-                return;
-            }
+            kivalasztott = e.AddedItems[0] as TTargy;
+            AKivalasztottSorTorlese();
+            this.Close();
+            new Torles().ShowDialog();
+        }
 
+        private void AKivalasztottSorTorlese()
+        {
+            //Egy listába teszi a csv fájl sorait
             var sorok = File.ReadAllLines("tantargyak.csv", Encoding.UTF8).ToList();
             string torolni = "";
 
-            foreach (var sor in sorok.Skip(1))
+            foreach (var sor in sorok)
             {
-                string[] resz = sor.Split(";");
-                string nev = resz[0];
-                string[] evfolyamReszei = resz[1].Split(".");
-                int evfolyam = int.Parse(evfolyamReszei[0]);
-                string tipus = resz[2];
-                int HetiOraszam = int.Parse(resz[3]);
-                if (nev == kivalasztott.Nev && evfolyam == kivalasztott.Evfolyam && tipus == kivalasztott.Tipus && HetiOraszam == kivalasztott.HetiOraszam)
-                {
-                    torolni = sor;
-                }
-            }
-            sorok.Remove(torolni);
-
-            using (StreamWriter sw = new("tantargyak.csv", false, Encoding.UTF8))
-            {
-                sw.WriteLine();
-            }
-
-            using (StreamWriter sw = new("tantargyak.csv", true, Encoding.UTF8))
-            {
-                foreach (var sor in sorok.Skip(1))
+                if (sor != "")
                 {
                     string[] resz = sor.Split(";");
                     string nev = resz[0];
@@ -89,11 +72,37 @@ namespace Projekt
                     int evfolyam = int.Parse(evfolyamReszei[0]);
                     string tipus = resz[2];
                     int HetiOraszam = int.Parse(resz[3]);
-                    sw.WriteLine($"{nev};{evfolyam};{tipus};{HetiOraszam}");
+                    if (nev == kivalasztott.Nev && evfolyam == kivalasztott.Evfolyam && tipus == kivalasztott.Tipus && HetiOraszam == kivalasztott.HetiOraszam)
+                    {
+                        torolni = sor;
+                    }
                 }
             }
+            sorok.Remove(torolni);//A listából kiszedjük a törölni kívánt sort
 
+            //Kiüríti a csv fájlt
+            using (StreamWriter sw = new("tantargyak.csv", false, Encoding.UTF8))
+            {
+                sw.WriteLine();
+            }
 
+            //Feltölti a csv fájlt már a kitörölt elem nélkül a lista alapján
+            using (StreamWriter sw = new("tantargyak.csv", true, Encoding.UTF8))
+            {
+                foreach (var sor in sorok)
+                {
+                    if (sor != "")
+                    {
+                        string[] resz = sor.Split(";");
+                        string nev = resz[0];
+                        string[] evfolyamReszei = resz[1].Split(".");
+                        int evfolyam = int.Parse(evfolyamReszei[0]);
+                        string tipus = resz[2];
+                        int HetiOraszam = int.Parse(resz[3]);
+                        sw.WriteLine($"{nev};{evfolyam};{tipus};{HetiOraszam}");
+                    }
+                }
+            }
         }
     }
 }
