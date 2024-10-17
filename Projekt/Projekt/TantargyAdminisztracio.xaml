@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="TantargyAdminisztracio" Height="450" Width="900" ResizeMode="NoResize">
+        Title="TantargyAdminisztracio" Height="600" Width="900" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -20,18 +20,20 @@
         <Label Grid.ColumnSpan="2" Content="Statisztikák" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Black"/>
 
         <StackPanel Grid.Row="1">
-            <Label x:Name="evfolyam9Label" FontSize="20"/>
-            <Label x:Name="evfolyam10Label" FontSize="20"/>
-            <Label x:Name="evfolyam11Label" FontSize="20"/>
-            <Label x:Name="evfolyam12Label" FontSize="20"/>
-            <Label x:Name="evfolyam13Label" FontSize="20"/>
+            <Label Content="Tantárgyak száma:" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+            <Label x:Name="evfolyam9Label" FontSize="18"/>
+            <Label x:Name="evfolyam10Label" FontSize="18"/>
+            <Label x:Name="evfolyam11Label" FontSize="18"/>
+            <Label x:Name="evfolyam12Label" FontSize="18"/>
+            <Label x:Name="evfolyam13Label" FontSize="18"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <Label x:Name="evfolyam9Label2" FontSize="20"/>
-            <Label x:Name="evfolyam10Label2" FontSize="20"/>
-            <Label x:Name="evfolyam11Label2" FontSize="20"/>
-            <Label x:Name="evfolyam12Label2" FontSize="20"/>
-            <Label x:Name="evfolyam13Label2" FontSize="20"/>
+            <Label Content="Tanórák száma:" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+            <Label x:Name="evfolyam9Label2" FontSize="18"/>
+            <Label x:Name="evfolyam10Label2" FontSize="18"/>
+            <Label x:Name="evfolyam11Label2" FontSize="18"/>
+            <Label x:Name="evfolyam12Label2" FontSize="18"/>
+            <Label x:Name="evfolyam13Label2" FontSize="18"/>
         </StackPanel>
 
     </Grid>
