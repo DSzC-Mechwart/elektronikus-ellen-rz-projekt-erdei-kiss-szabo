@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.DirectoryServices.ActiveDirectory;
 using System.IO;
 using System.Linq;
@@ -21,13 +22,15 @@ namespace Projekt
     /// </summary>
     public partial class SzemelyiAdatMegjelenites : Window
     {
-        List<szAdat> szAdatok = [];
+        ObservableCollection<szAdat> szAdatok = new ObservableCollection<szAdat>();
         //double debreceniStat, kollegistaStat, bejarosStat;
         public SzemelyiAdatMegjelenites()
         {
             InitializeComponent();
             szAdatMegjel_Feltoltes();
+            DataContext=this;
             szAdatMegjelDataGrid.PreviewKeyDown += szAdatMegjelDataGrid_PreviewKeyDown;
+            this.Closed += onClose;
         }
 
         private void szAdatMegjel_Feltoltes()
@@ -50,6 +53,7 @@ namespace Projekt
                 szAdat Adat = new(Nev, SzuletesiHely, SzuletesiIdo, AnyjaNeve, Lakcim, Beiratkozas, Szak, Osztaly, Kollegista, Kollegium, TorzslapSzam);
                 szAdatok.Add(Adat);
             }
+            DataContext = this;
             szAdatMegjelDataGrid.ItemsSource = szAdatok;
             statisztika();
         }
@@ -90,6 +94,19 @@ namespace Projekt
                             }
                         }
                     }
+                }
+            }
+        }
+        
+        private void onClose(object sender, EventArgs e)
+        {
+            int SorSzam = Convert.ToInt32(File.ReadLines("SzemelyiAdatok.csv").First());
+            using (StreamWriter writer = new StreamWriter("SzemelyiAdatok.csv"))
+            {
+                writer.WriteLine($"{SorSzam}");
+                foreach (var item in szAdatok)
+                {
+                    writer.WriteLine($"{item.Nev};{item.SzuletesiHely};{item.SzuletesiIdo};{item.AnyjaNeve};{item.Lakcim};{item.BeiratkozasIdeje};{item.Szak};{item.Osztaly};{((item.Kollegista) ? "Igen" : "Nem")};{item.Kollegium};{item.Torzslapszam}");
                 }
             }
         }
