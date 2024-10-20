@@ -22,6 +22,7 @@ namespace Projekt
     public partial class SzemelyiAdatMegjelenites : Window
     {
         List<szAdat> szAdatok = [];
+        //double debreceniStat, kollegistaStat, bejarosStat;
         public SzemelyiAdatMegjelenites()
         {
             InitializeComponent();
@@ -50,13 +51,15 @@ namespace Projekt
                 szAdatok.Add(Adat);
             }
             szAdatMegjelDataGrid.ItemsSource = szAdatok;
+            statisztika();
         }
 
-        private void szAdatMegjelDataGrid_Changed(object sender, SelectionChangedEventArgs e)
+        private void statisztika()
         {
-
+            debreceniStat.Content = $"Debreceni tanulók aránya: {Math.Round(((decimal)szAdatok.Count(x=>x.Lakcim.Contains("Debrecen")) / (decimal)szAdatok.Count()) * 100, 2)}%";
+            kollegistaStat.Content = $"Kollégista tanulók aránya: {Math.Round(((decimal)szAdatok.Count(x => x.Kollegista) / (decimal)szAdatok.Count()) * 100), 2}%";
+            bejarosStat.Content = $"Bejárós tanulók aránya: {Math.Round(((decimal)(szAdatok.Count() - szAdatok.Count(x => x.Lakcim.Contains("Debrecen")) - szAdatok.Count(x => x.Kollegista)) / (decimal)szAdatok.Count()) * 100), 2}%";
         }
-
         private void szAdatMegjelDataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Delete)
@@ -67,16 +70,20 @@ namespace Projekt
                     int targetIndex = target.Items.IndexOf(target.SelectedItem);
                     if (targetIndex >= 0 && targetIndex < szAdatok.Count)
                     {
-                        szAdatok.RemoveAt(targetIndex);
-                        szAdatMegjelDataGrid.ItemsSource = null;
-                        szAdatMegjelDataGrid.ItemsSource = szAdatok;
-                        int SorSzam = Convert.ToInt32(File.ReadLines("SzemelyiAdatok.csv").First());
-                        using (StreamWriter writer = new StreamWriter("SzemelyiAdatok.csv"))
+                        if (MessageBox.Show("Biztos kitörli?", "Megerősités", MessageBoxButton.OKCancel)==MessageBoxResult.OK)
                         {
-                            writer.WriteLine($"{SorSzam}");
-                            foreach (var item in szAdatok)
+                            szAdatok.RemoveAt(targetIndex);
+                            szAdatMegjelDataGrid.ItemsSource = null;
+                            szAdatMegjelDataGrid.ItemsSource = szAdatok;
+                            statisztika();
+                            int SorSzam = Convert.ToInt32(File.ReadLines("SzemelyiAdatok.csv").First());
+                            using (StreamWriter writer = new StreamWriter("SzemelyiAdatok.csv"))
                             {
-                                writer.WriteLine($"{item.Nev};{item.SzuletesiHely};{item.SzuletesiIdo};{item.AnyjaNeve};{item.Lakcim};{item.BeiratkozasIdeje};{item.Szak};{item.Osztaly};{((item.Kollegista) ? "Igen" : "Nem")};{item.Kollegium};{item.Torzslapszam}");
+                                writer.WriteLine($"{SorSzam}");
+                                foreach (var item in szAdatok)
+                                {
+                                    writer.WriteLine($"{item.Nev};{item.SzuletesiHely};{item.SzuletesiIdo};{item.AnyjaNeve};{item.Lakcim};{item.BeiratkozasIdeje};{item.Szak};{item.Osztaly};{((item.Kollegista) ? "Igen" : "Nem")};{item.Kollegium};{item.Torzslapszam}");
+                                }
                             }
                         }
                     }

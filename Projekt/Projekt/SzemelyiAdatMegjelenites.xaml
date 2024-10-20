@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="SzemelyiAdatMegjelenites" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="szAdatMegjelDataGrid" d:ItemsSource="{d:SampleData ItemCount=2}" SelectionChanged="szAdatMegjelDataGrid_Changed"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30px"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label x:Name="debreceniStat" Content="test"/>
+            <Label x:Name="kollegistaStat" Content="test"/>
+            <Label x:Name="bejarosStat" Content="test"/>
+        </StackPanel>
+        <DataGrid x:Name="szAdatMegjelDataGrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=2}"/>
     </Grid>
 </Window>
