@@ -26,7 +26,7 @@ namespace Projekt
         {
             InitializeComponent();
             ListaFeltotlese();
-            TantargyDatagrid.ItemsSource = Tantargyak;
+            TantargyDataGrid.ItemsSource = Tantargyak;
         }
 
         private void ListaFeltotlese()
@@ -48,7 +48,7 @@ namespace Projekt
         }
 
         TTargy kivalasztott;
-        private void TantargyDatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TantargyDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             kivalasztott = e.AddedItems[0] as TTargy;
             AKivalasztottSorTorlese();

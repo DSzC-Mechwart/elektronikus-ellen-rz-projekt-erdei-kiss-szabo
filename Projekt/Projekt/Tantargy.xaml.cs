@@ -104,5 +104,10 @@ namespace Projekt
         {
             new TantargyAdminisztracio().ShowDialog();
         }
+
+        private void DiakhozRendeles(object sender, RoutedEventArgs e)
+        {
+            new DiakhozRendelesAblak().ShowDialog();
+        }
     }
 }

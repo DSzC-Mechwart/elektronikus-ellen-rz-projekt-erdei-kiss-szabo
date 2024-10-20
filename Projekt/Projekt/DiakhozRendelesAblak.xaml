@@ -1,0 +1,33 @@
+﻿<Window x:Class="Projekt.DiakhozRendelesAblak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="DiakhozRendelesAblak" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="2" Content="Rendeljen a tanulókhoz tantárgyakat!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold"/>
+
+        <StackPanel Grid.Row="1">
+            <Label Grid.Row="1" Content="Tanulók:" HorizontalAlignment="Center" FontSize="25"/>
+            <DataGrid x:Name="TanuloDataGrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="TanuloDataGrid_SelectionChanged"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Grid.Row="1" Grid.Column="1" Content="Tantárgyak:" HorizontalAlignment="Center" FontSize="25"/>
+            <DataGrid x:Name="TantargyDataGrid" Grid.Row="1" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="TantargyDataGrid_SelectionChanged"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
