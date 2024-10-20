@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="SzemelyiAdatMegjelenites" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="szAdatMegjelDataGrid" SelectionChanged="szAdatMegjelDataGrid_Changed"/>
+        <DataGrid x:Name="szAdatMegjelDataGrid" d:ItemsSource="{d:SampleData ItemCount=2}" SelectionChanged="szAdatMegjelDataGrid_Changed"/>
     </Grid>
 </Window>

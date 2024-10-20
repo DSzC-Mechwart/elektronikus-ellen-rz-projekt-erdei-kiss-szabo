@@ -45,12 +45,25 @@ namespace Projekt
             if (kollegium.Visibility==Visibility.Hidden)
             {
                 kollegium.Visibility=Visibility.Visible;
+                kollegiumLabel.Visibility = Visibility.Visible;
+                leadasGomb.IsEnabled=false;
                 Kollegista = true;
             }
             else
             {
                 kollegium.Visibility = Visibility.Hidden;
+                kollegiumLabel.Visibility=Visibility.Hidden;
+                kollegium.Text = "";
+                leadasGomb.IsEnabled = true;
                 Kollegista = false;
+            }
+        }
+
+        private void kollegium_Changed(object sender, RoutedEventArgs e)
+        {
+            if (kollegium.Text!="")
+            {
+                leadasGomb.IsEnabled = true;
             }
         }
 

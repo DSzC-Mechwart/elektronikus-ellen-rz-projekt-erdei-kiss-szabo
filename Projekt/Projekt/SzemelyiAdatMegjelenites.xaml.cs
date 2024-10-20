@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Projekt
         {
             InitializeComponent();
             szAdatMegjel_Feltoltes();
-            szAdatMegjelDataGrid.ItemsSource = szAdatok;
+            szAdatMegjelDataGrid.PreviewKeyDown += szAdatMegjelDataGrid_PreviewKeyDown;
         }
 
         private void szAdatMegjel_Feltoltes()
@@ -48,11 +49,39 @@ namespace Projekt
                 szAdat Adat = new(Nev, SzuletesiHely, SzuletesiIdo, AnyjaNeve, Lakcim, Beiratkozas, Szak, Osztaly, Kollegista, Kollegium, TorzslapSzam);
                 szAdatok.Add(Adat);
             }
+            szAdatMegjelDataGrid.ItemsSource = szAdatok;
         }
 
         private void szAdatMegjelDataGrid_Changed(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void szAdatMegjelDataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete)
+            {
+                var target = sender as DataGrid;
+                if (target.SelectedItem != null)
+                {
+                    int targetIndex = target.Items.IndexOf(target.SelectedItem);
+                    if (targetIndex >= 0 && targetIndex < szAdatok.Count)
+                    {
+                        szAdatok.RemoveAt(targetIndex);
+                        szAdatMegjelDataGrid.ItemsSource = null;
+                        szAdatMegjelDataGrid.ItemsSource = szAdatok;
+                        int SorSzam = Convert.ToInt32(File.ReadLines("SzemelyiAdatok.csv").First());
+                        using (StreamWriter writer = new StreamWriter("SzemelyiAdatok.csv"))
+                        {
+                            writer.WriteLine($"{SorSzam}");
+                            foreach (var item in szAdatok)
+                            {
+                                writer.WriteLine($"{item.Nev};{item.SzuletesiHely};{item.SzuletesiIdo};{item.AnyjaNeve};{item.Lakcim};{item.BeiratkozasIdeje};{item.Szak};{item.Osztaly};{((item.Kollegista) ? "Igen" : "Nem")};{item.Kollegium};{item.Torzslapszam}");
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

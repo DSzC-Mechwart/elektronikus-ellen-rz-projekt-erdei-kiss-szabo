@@ -53,8 +53,8 @@
             <TextBox x:Name="szak" Grid.Column="1" Grid.Row="6" Width="400" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <TextBox x:Name="osztaly" Grid.Column="1" Grid.Row="7" Width="400" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <CheckBox Checked="kollegista_Changed" Unchecked="kollegista_Changed" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <TextBox x:Name="kollegium" Visibility="Hidden" Grid.Column="1" Grid.Row="9" Width="400" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox x:Name="kollegium" Visibility="Hidden" Grid.Column="1" Grid.Row="9" Width="400" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" SelectionChanged="kollegium_Changed"/>
         </Grid>
-        <Button Grid.Row="2" Content="Leadás" Click="leadasGomb_Click" Height="20" Width="60" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button Grid.Row="2" Content="Leadás" x:Name="leadasGomb" Click="leadasGomb_Click" Height="20" Width="60" VerticalAlignment="Top" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

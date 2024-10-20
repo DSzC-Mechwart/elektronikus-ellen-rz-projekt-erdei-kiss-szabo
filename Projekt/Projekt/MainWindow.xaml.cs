@@ -20,7 +20,7 @@ namespace Projekt
         {
             InitializeComponent();
             diakbej.IsEnabled = false;
-            adminbej.IsEnabled = false;
+            //adminbej.IsEnabled = false;
         }
 
         private void diakbe(object sender, RoutedEventArgs e)
