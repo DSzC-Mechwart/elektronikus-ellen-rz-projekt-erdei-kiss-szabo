@@ -35,6 +35,10 @@ namespace Projekt
             new Admin().Show();
             Close();
         }
+        private void adatMegjelGomb_Click(object sender, RoutedEventArgs e)
+        {
+            new SzemelyiAdatMegjelenites().Show();
+        }
 
         private void kollegista_Changed(object sender, RoutedEventArgs e)
         {
