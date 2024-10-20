@@ -25,6 +25,7 @@ namespace Projekt
         public Tantargy()
         {
             InitializeComponent();
+            FelvetelGombLetiltasa();
         }
 
         private void HetiOraszamBeallitasa()
@@ -49,6 +50,7 @@ namespace Projekt
                         break;
                 }
             }
+            FelvetelGombLetiltasa();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -82,6 +84,15 @@ namespace Projekt
             {
                 sw.WriteLine($"{TantargyNeve.Text};{EvfolyamCB.Text};{tipus};{HetiOraszamTB.Text}");
             }            
+        }
+
+        private void FelvetelGombLetiltasa()
+        {
+            FelvetelGomb.IsEnabled = false;
+            if (TantargyNeve.Text != "" && EvfolyamCB.SelectedIndex > -1 && (KozismeretiRB.IsChecked == true || SzakmaiRB.IsChecked == true) && HetiOraszamTB.Text != "")
+            {
+                FelvetelGomb.IsEnabled = true;
+            }
         }
 
         private void TorlesGomb(object sender, RoutedEventArgs e)
