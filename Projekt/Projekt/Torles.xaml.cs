@@ -51,6 +51,7 @@ namespace Projekt
         private void TantargyDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             kivalasztott = e.AddedItems[0] as TTargy;
+            MessageBox.Show($"{kivalasztott.Nev} törölve lett a {kivalasztott.Evfolyam}. osztályból");
             AKivalasztottSorTorlese();
             this.Close();
             new Torles().ShowDialog();
