@@ -56,9 +56,12 @@ namespace Projekt
 
         private void statisztika()
         {
-            debreceniStat.Content = $"Debreceni tanulók aránya: {Math.Round(((decimal)szAdatok.Count(x=>x.Lakcim.Contains("Debrecen")) / (decimal)szAdatok.Count()) * 100, 2)}%";
-            kollegistaStat.Content = $"Kollégista tanulók aránya: {Math.Round(((decimal)szAdatok.Count(x => x.Kollegista) / (decimal)szAdatok.Count()) * 100), 2}%";
-            bejarosStat.Content = $"Bejárós tanulók aránya: {Math.Round(((decimal)(szAdatok.Count() - szAdatok.Count(x => x.Lakcim.Contains("Debrecen")) - szAdatok.Count(x => x.Kollegista)) / (decimal)szAdatok.Count()) * 100), 2}%";
+            if (szAdatok.Count>0)
+            {
+                debreceniStat.Content = $"Debreceni tanulók aránya: {Math.Round(((decimal)szAdatok.Count(x => x.Lakcim.Contains("Debrecen")) / (decimal)szAdatok.Count()) * 100, 2)}%";
+                kollegistaStat.Content = $"Kollégista tanulók aránya: {Math.Round(((decimal)szAdatok.Count(x => x.Kollegista) / (decimal)szAdatok.Count()) * 100),2}%";
+                bejarosStat.Content = $"Bejárós tanulók aránya: {Math.Round(((decimal)(szAdatok.Count() - szAdatok.Count(x => x.Lakcim.Contains("Debrecen")) - szAdatok.Count(x => x.Kollegista)) / (decimal)szAdatok.Count()) * 100),2}%";
+            }
         }
         private void szAdatMegjelDataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
         {

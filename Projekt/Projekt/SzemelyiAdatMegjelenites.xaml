@@ -13,10 +13,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Label x:Name="debreceniStat" Content="test"/>
-            <Label x:Name="kollegistaStat" Content="test"/>
-            <Label x:Name="bejarosStat" Content="test"/>
+            <Label x:Name="debreceniStat" Content="Debreceni tanulók aránya: 0%"/>
+            <Label x:Name="kollegistaStat" Content="Kollégista tanulók aránya: 0%"/>
+            <Label x:Name="bejarosStat" Content="Bejárós tanulók aránya: 0%"/>
         </StackPanel>
-        <DataGrid x:Name="szAdatMegjelDataGrid" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=2}"/>
+        <DataGrid x:Name="szAdatMegjelDataGrid" Grid.Row="1" ItemsSource="{Binding szAdatok}"/>
     </Grid>
 </Window>
