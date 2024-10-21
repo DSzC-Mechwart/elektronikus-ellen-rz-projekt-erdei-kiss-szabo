@@ -35,13 +35,13 @@ namespace Projekt
 
         private void DiakokListaFeltotlese()
         {
-            foreach (var sor in File.ReadAllLines("Diak.csv"))
+            foreach (var sor in File.ReadAllLines("SzemelyiAdatok.csv").Skip(1))
             {
                 if (sor != "")
                 {
-                    string[] resz = sor.Split(";");
+                    string[] resz = sor.Split(';');
                     string nev = resz[0];
-                    int evfolyam = int.Parse(resz[1]);
+                    int evfolyam = int.Parse(resz[7].Split(".")[0]);
                     Tanulo tanulo = new(nev, evfolyam);
                     Diakok.Add(tanulo);
                 }
