@@ -27,7 +27,7 @@ namespace Projekt
         private void diakbe(object sender, RoutedEventArgs e)
         {
             string enteredName = neve.Text;
-            string enteredPassword = jelszava.Text;
+            string enteredPassword = jelszava.Password;
 
             bool loginSuccess = false;
             foreach (var item in File.ReadAllLines("SzemelyiAdatok.csv", Encoding.UTF8).Skip(1))
@@ -63,10 +63,23 @@ namespace Projekt
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            diakbej.IsEnabled = !string.IsNullOrWhiteSpace(neve.Text) && !string.IsNullOrWhiteSpace(jelszava.Text);
+            diakbej.IsEnabled = !string.IsNullOrWhiteSpace(neve.Text) && !string.IsNullOrWhiteSpace(jelszava.Password);
             string adminnev = neve.Text;
-            string adminjelszo = jelszava.Text;
+            string adminjelszo = jelszava.Password;
             if (adminnev == "admin" && adminjelszo == "admin") 
+            {
+                adminbej.IsEnabled = true;
+            }
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            diakbej.IsEnabled = !string.IsNullOrWhiteSpace(neve.Text) && !string.IsNullOrWhiteSpace(jelszava.Password);
+            string adminnev = neve.Text;
+            string diaknev = neve.Text;
+            string adminjelszo = jelszava.Password;
+            string diakjelszo = jelszava.Password;
+            if (adminnev == "admin" && adminjelszo == "admin")
             {
                 adminbej.IsEnabled = true;
             }
@@ -77,9 +90,9 @@ namespace Projekt
             diakbej.IsEnabled = true;
             string adminnev = neve.Text;
             string diaknev = neve.Text;
-            string adminjelszo = jelszava.Text;
-            string diakjelszo = jelszava.Text;
-            if (adminjelszo== "admin" && adminjelszo == "admin")
+            string adminjelszo = jelszava.Password;
+            string diakjelszo = jelszava.Password;
+            if (adminnev== "admin" && adminjelszo == "admin")
             {
                 adminbej.IsEnabled = true;
             }

@@ -10,7 +10,7 @@
         <Label Content="Tanuló neve:" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" Margin="0,64,0,0"/>
         <TextBox x:Name="neve" HorizontalAlignment="Center" FontSize="20" Margin="0,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
         <Label Content="Tanuló jelszava:" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" Margin="0,130,0,0"/>
-        <TextBox x:Name="jelszava" HorizontalAlignment="Center" FontSize="20" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <PasswordBox x:Name="jelszava" HorizontalAlignment="Center" FontSize="20" Margin="0,172,0,0" VerticalAlignment="Top" Width="120" PasswordChanged="PasswordBox_PasswordChanged"/>
         <Button x:Name="diakbej" Content="Bejelentkezés" FontSize="20" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Click="diakbe"/>
         <Button x:Name="adminbej" Content="Adminisztráció" FontSize="15" HorizontalAlignment="Center" Margin="0,244,0,0" VerticalAlignment="Top" Click="adminbe"/>
         <Label Content="Elektronikus ellenőrző" HorizontalAlignment="Center" FontSize="30" Margin="0,14,0,0" VerticalAlignment="Top"/>
