@@ -109,5 +109,11 @@ namespace Projekt
         {
             new DiakhozRendelesAblak().ShowDialog();
         }
+
+        private void Vissza(object sender, RoutedEventArgs e)
+        {
+            new Admin().Show();
+            this.Close();
+        }
     }
 }

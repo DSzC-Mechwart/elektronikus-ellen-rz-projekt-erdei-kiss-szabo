@@ -21,6 +21,7 @@
             <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Button Content="←" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Vissza"/>
         <Label Content="Tantárgy felvétel" FontSize="50" FontWeight="Bold" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <Label Grid.Row="1" Grid.Column="0" Content="Tantárgy neve:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
@@ -49,5 +50,6 @@
         <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="125" Height="50" Content="Törlés" FontSize="20" Margin="0, 0, 0, 75" Click="TorlesGomb"/>
         <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="125" Height="50" Content="Admin" FontSize="20" Margin="0, 50, 0, 0" Click="AdminGomb"/>
         <Button Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="125" Height="50" Content="Diákhoz adás" FontSize="20" Margin="0, 175, 0, 0" Click="DiakhozRendeles"/>
+        
     </Grid>
 </Window>

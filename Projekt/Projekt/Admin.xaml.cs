@@ -34,5 +34,11 @@ namespace Projekt
             new SzemelyiAdat().Show();
             this.Close();
         }
+
+        private void Vissza(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
+        }
     }
 }
